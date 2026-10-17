@@ -1,0 +1,6 @@
+interface:
+  display_name: "Token Saver"
+  short_description: "Reduce avoidable token use without losing useful detail"
+  default_prompt: "Use $token-saver to keep this task concise without skipping the important checks."
+policy:
+  allow_implicit_invocation: true
