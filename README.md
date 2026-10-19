@@ -1,10 +1,12 @@
+[English](README.md) | [한국어](README.ko.md)
+
 # Token Saver Skill
 
 An Agent Skill for cutting avoidable context gathering, repeated tool work, and overlong answers—without treating brevity as more important than correctness.
 
 ## What it is (and is not)
 
-`token-saver/SKILL.md` gives an agent a lightweight workflow for using fewer unnecessary tokens during a task. It does not change a model's tokenizer, guarantee lower API billing, or reduce tokens hidden inside a platform's reasoning or tool infrastructure. A short task may not benefit because loading the Skill has its own token cost.
+[`token-saver/SKILL.md`](token-saver/SKILL.md) gives an agent a lightweight workflow for using fewer unnecessary tokens during a task. It does not change a model's tokenizer, guarantee lower API billing, or reduce tokens hidden inside a platform's reasoning or tool infrastructure. A short task may not benefit because loading the Skill has its own token cost.
 
 The central trade-off is deliberate: do not save tokens by skipping necessary source inspection, tests, safety checks, or details the user asked to keep. For complex or high-stakes work, the right answer can require more tokens.
 
