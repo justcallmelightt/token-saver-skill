@@ -12,15 +12,11 @@ Agents that read `AGENTS.md` will use this file when working inside this reposit
 
 Keep always-on instructions short. Put task-specific procedures in Skills, keep each `SKILL.md` entrypoint concise, and move optional detail to separate references. Follow the client's rules for reading a selected `SKILL.md` in full.
 
-## What the rules do
+## Designed to keep instruction overhead low
 
-- Start with the requested outcome and a proportionate way to verify it.
-- Find relevant files before widening a search; reuse information already established in the task.
-- Avoid repeated tool calls and oversized output when they cannot change the answer.
-- Help the agent choose relevant specialized skills and avoid loading unrelated ones or optional references.
-- Keep essential inspection, testing, safety checks, and requested detail.
+This repository ships one compact `AGENTS.md` and no `SKILL.md`. Its rules guide the agent to inspect only relevant context, avoid repeated tool work, and select installed specialized Skills only when the task calls for them. Required Skill instructions are read in full; optional references are loaded on demand. The template also avoids repeating the same rule across instruction files.
 
-These are working defaults, not a promise about model behavior or API cost. They cannot change a tokenizer or control hidden platform work. They may add instruction overhead, especially on short tasks.
+This is how Token Saver is designed to reduce avoidable token use, including its own instruction overhead. It does not guarantee lower total or billed tokens; short tasks may still cost more because the template is loaded.
 
 ## Evaluate it
 
