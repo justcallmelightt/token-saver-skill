@@ -1,8 +1,8 @@
 [English](README.md) | [한국어](README.ko.md)
 
-# Token Saver — AI Work Guidelines
+# AGENTS.md
 
-A short [`AGENTS.md`](AGENTS.md) template for reducing avoidable context gathering, repeated tool work, and overlong answers while keeping the checks a task needs.
+Token Saver is a short [`AGENTS.md`](AGENTS.md) template for reducing avoidable context gathering, repeated tool work, and overlong answers while keeping the checks a task needs.
 
 ## Use it in a project
 
@@ -15,7 +15,7 @@ Agents that read `AGENTS.md` will use this file when working inside this reposit
 - Start with the requested outcome and a proportionate way to verify it.
 - Find relevant files before widening a search; reuse information already established in the task.
 - Avoid repeated tool calls and oversized output when they cannot change the answer.
-- Use specialized skills when they help, without loading unrelated ones.
+- Help the agent choose relevant specialized skills and avoid loading unrelated ones.
 - Keep essential inspection, testing, safety checks, and requested detail.
 
 These are working defaults, not a promise about model behavior or API cost. They cannot change a tokenizer or control hidden platform work. They may add instruction overhead, especially on short tasks.
