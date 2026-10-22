@@ -1,6 +1,6 @@
 [English](README.md) | [한국어](README.ko.md)
 
-# Token Saver for AGENTS.md
+# Token Saver — AI Work Guidelines
 
 A short [`AGENTS.md`](AGENTS.md) template for reducing avoidable context gathering, repeated tool work, and overlong answers while keeping the checks a task needs.
 

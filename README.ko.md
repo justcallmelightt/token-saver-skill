@@ -1,6 +1,6 @@
 [English](README.md) | [한국어](README.ko.md)
 
-# Token Saver 에이전트 지침
+# Token Saver — AI 작업 지침
 
 필요한 검증은 유지하면서 불필요한 맥락 수집, 반복 도구 작업, 지나치게 긴 답변을 줄이기 위한 짧은 [`AGENTS.md`](AGENTS.md) 템플릿입니다.
 
