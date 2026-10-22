@@ -1,37 +1,25 @@
 [English](README.md) | [한국어](README.ko.md)
 
-# Token Saver Skill
+# Token Saver for AGENTS.md
 
-An Agent Skill for cutting avoidable context gathering, repeated tool work, and overlong answers—without treating brevity as more important than correctness.
+A short [`AGENTS.md`](AGENTS.md) template for reducing avoidable context gathering, repeated tool work, and overlong answers while keeping the checks a task needs.
 
-## What it is (and is not)
+## Use it in a project
 
-[`token-saver/SKILL.md`](token-saver/SKILL.md) gives an agent a lightweight workflow for using fewer unnecessary tokens during a task. It does not change a model's tokenizer, guarantee lower API billing, or reduce tokens hidden inside a platform's reasoning or tool infrastructure. A short task may not benefit because loading the Skill has its own token cost.
+Add the contents of [`AGENTS.md`](AGENTS.md) to the `AGENTS.md` at the root of the project where you want these defaults to apply. If that project already has an `AGENTS.md`, merge the rules into it and keep its existing project instructions. Review the merged instructions for conflicts before using them.
 
-The central trade-off is deliberate: do not save tokens by skipping necessary source inspection, tests, safety checks, or details the user asked to keep. For complex or high-stakes work, the right answer can require more tokens.
+Agents that read `AGENTS.md` will use this file when working inside this repository. Linking to it from another project does not make an agent read it there; put the instructions in the project where the agent works.
 
-## Contents
+## What the rules do
 
-- [`token-saver/SKILL.md`](token-saver/SKILL.md) — portable Skill instructions.
-- [`token-saver/agents/openai.yaml`](token-saver/agents/openai.yaml) — optional OpenAI/Codex UI metadata; the core Skill does not depend on it.
+- Start with the requested outcome and a proportionate way to verify it.
+- Find relevant files before widening a search; reuse information already established in the task.
+- Avoid repeated tool calls and oversized output when they cannot change the answer.
+- Use specialized skills when they help, without loading unrelated ones.
+- Keep essential inspection, testing, safety checks, and requested detail.
 
-## Install/use
+These are working defaults, not a promise about model behavior or API cost. They cannot change a tokenizer or control hidden platform work. They may add instruction overhead, especially on short tasks.
 
-Use the `token-saver/` directory as the Skill folder in an Agent Skills-compatible client. For clients with a skills installer, select the `token-saver` skill from this repository; otherwise, copy the folder into that client's documented skills directory. Keep the directory name and the frontmatter `name` as `token-saver`.
+## Evaluate it
 
-This repository is private for initial review. No public release or measured savings claim is being made yet.
-
-## How to evaluate it
-
-Compare the same representative tasks with and without the Skill, using the same model and settings:
-
-1. A direct factual question that should need no tools.
-2. A small code change that needs one relevant file inspection and a focused test.
-3. A verbose tool output where only a specific error or result matters.
-4. A broad or high-stakes request where required detail and checks must not be cut.
-
-Track input and output tokens separately if the client exposes them, note tool calls and elapsed time, and score whether the result remains correct and complete for the request. Include the Skill's instruction overhead. Do not infer token savings from a shorter-looking transcript alone.
-
-## Feedback wanted
-
-Please review whether the guidance actually changes agent behavior, where it over-compresses or adds friction, and whether the evaluation cases reflect real work. The next iteration should be based on those observations rather than an unsupported savings percentage.
+Compare representative tasks with and without these instructions, using the same model, settings, and environment. Include a simple question, a focused code change, a task with long tool output, and a broad or high-stakes request. Record result quality and completeness alongside input/output tokens, tool calls, and elapsed time. Include the cost of loading the instructions where it is measurable. Do not claim a savings percentage from transcript length alone.
